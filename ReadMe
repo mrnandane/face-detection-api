@@ -10,3 +10,7 @@ edit package.json and add script:
 "start" : "nodemon server.js"
 
 npm start
+
+to start with desired PORT 
+node server.js PORT=<desired_port>
+
