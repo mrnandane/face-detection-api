@@ -1,0 +1,12 @@
+npm init
+npm install nodemon
+npm install body-parser
+npm install express
+
+touch server.js
+--> write file with some code to configure server..
+
+edit package.json and add script:
+"start" : "nodemon server.js"
+
+npm start
