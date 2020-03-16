@@ -14,17 +14,25 @@ const image = require('./controllers/image');
 
 // install and import knex for database connectivity
 const knex = require('knex');
-// connect to database using knex
+// connect to local database using knex 
+// const db = knex({
+// 	client: 'pg',
+// 	connection: {
+// 	  host : '127.0.0.1',
+// 	  user : 'postgres',
+// 	  password : 'synerzip',
+// 	  database : 'facedetection'
+// 	}
+// });
+
+// connect to heroku database using knex 
 const db = knex({
 	client: 'pg',
 	connection: {
-	  host : '127.0.0.1',
-	  user : 'postgres',
-	  password : 'synerzip',
-	  database : 'facedetection'
+		connectionString: process.env.DATABASE_URL,
+		ssl: true,
 	}
 });
-
 // install and import cors for resolving cors issue while running on localhost
 const cors = require('cors');
 
